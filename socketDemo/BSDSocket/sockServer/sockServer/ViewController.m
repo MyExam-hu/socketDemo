@@ -47,7 +47,7 @@ typedef NS_ENUM(NSInteger,ServerType) {
     }
     else{
         if (self.serType == ServerTypeTCP) {
-//            ssize_t count = send(self.fd, [_textF.text UTF8String], 1024, 0);//返回发送的字节数
+            ssize_t count = send(self.fd, [_textF.text UTF8String], 1024, 0);//返回发送的字节数
             NSString* strMsg = [NSString stringWithFormat:@"      %@~~~~~server\n",_textF.text];
             _textView.text = [_textView.text stringByAppendingString:strMsg];
         }

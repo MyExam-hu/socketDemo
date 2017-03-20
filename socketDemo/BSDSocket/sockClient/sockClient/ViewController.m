@@ -39,6 +39,7 @@ typedef NS_ENUM(NSInteger,ServerType) {
     [super viewDidLoad];
 }
 
+
 - (IBAction)connectServer:(id)sender {
     [NSThread detachNewThreadSelector:@selector(connectSer) toTarget:self withObject:nil];
 }
@@ -47,6 +48,14 @@ typedef NS_ENUM(NSInteger,ServerType) {
     self.serType = ServerTypeTCP;
     
     int err;
+    /**
+     创建套接字
+
+     @param AF_INET AF_INET->表示IPv4網路協定  AF_INET6->表示IPv6  AF_UNIX->表示本地通訊端
+     @param SOCK_STREAM socket類型
+     @param 0 指定實際使用的傳輸協定例如:IPPROTO_IP
+     @return 如果發生錯誤，函式返回值為-1。 否則，函式會返回一個代表新分配的描述符的整數
+     */
     int fd=socket(AF_INET, SOCK_STREAM, 0);
     self.fd = fd;
     BOOL success=(fd!=-1);
@@ -58,10 +67,20 @@ typedef NS_ENUM(NSInteger,ServerType) {
         dispatch_async(dispatch_get_main_queue(), ^{
             _textView.text = [_textView.text stringByAppendingString:logStr];
         });
+        //清空数组
         memset(&addr, 0, sizeof(addr));
         addr.sin_len=sizeof(addr);
         addr.sin_family=AF_INET;
         addr.sin_addr.s_addr=INADDR_ANY;
+        
+        /**
+         建立地址和套接字的联系
+
+         @param fd 表示使用bind函式的通訊端描述符
+         @param sockaddr 指向sockaddr結構（用於表示所分配位址）的指標
+         @param addrlen 用socklen_t欄位指定了sockaddr結構的長度
+         @return 如果發生錯誤，函式返回值為-1，否則為0。
+         */
         err=bind(fd, (const struct sockaddr *)&addr, sizeof(addr));
         success=(err==0);
     }
@@ -72,9 +91,9 @@ typedef NS_ENUM(NSInteger,ServerType) {
         peeraddr.sin_len=sizeof(peeraddr);
         peeraddr.sin_family=AF_INET;
         peeraddr.sin_port=htons(_portTF.text.intValue);
-        //            peeraddr.sin_addr.s_addr=INADDR_ANY;
+//            peeraddr.sin_addr.s_addr=INADDR_ANY;
         peeraddr.sin_addr.s_addr=inet_addr([_ipTF.text UTF8String]);
-        //            这个地址是服务器的地址，
+//            这个地址是服务器的地址，
         socklen_t addrLen;
         addrLen =sizeof(peeraddr);
         printf("connecting...\n");
@@ -85,6 +104,7 @@ typedef NS_ENUM(NSInteger,ServerType) {
         err=connect(fd, (struct sockaddr *)&peeraddr, addrLen);
         success=(err==0);
         if (success) {
+            //可以获得一个与socket相关的地址，服务器端可以通过它得到相关客户端地址，而客户端也可以得到当前已连接成功的socket的ip和端
             err =getsockname(fd, (struct sockaddr *)&addr, &addrLen);
             success=(err==0);
             if (success) {
