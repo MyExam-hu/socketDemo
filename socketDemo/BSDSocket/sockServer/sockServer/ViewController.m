@@ -44,8 +44,7 @@ typedef NS_ENUM(NSInteger,ServerType) {
     if (_textF.text.length == 0) {
         NSLog(@"内容为空");
         return;
-    }
-    else{
+    }else{
         if (self.serType == ServerTypeTCP) {
             ssize_t count = send(self.fd, [_textF.text UTF8String], 1024, 0);//返回发送的字节数
             NSString* strMsg = [NSString stringWithFormat:@"      %@~~~~~server\n",_textF.text];
@@ -54,6 +53,7 @@ typedef NS_ENUM(NSInteger,ServerType) {
         else if(self.serType == ServerTypeUDP){
             struct sockaddr_in ser_addr;
             socklen_t addrlen=sizeof(struct sockaddr_in);
+            //bzero()会将参数s 所指的内存区域前n 个字节，全部设为零值。
             bzero(&ser_addr,addrlen);
             ser_addr.sin_family=AF_INET;
             ser_addr.sin_addr.s_addr=inet_addr([_IPTextF.text UTF8String]);
