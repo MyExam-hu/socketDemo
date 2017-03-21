@@ -85,6 +85,7 @@
 
 - (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port{
     [self showLogMsg:[NSString stringWithFormat:@"连接服务器地址： %@,端口：%d成功",host,port]];
+    //表示持续获取数据
     [self.socket readDataWithTimeout:-1 tag:0];
     //把自己的信息发送给服务器
     NSMutableDictionary* dicUserData = [NSMutableDictionary dictionary];

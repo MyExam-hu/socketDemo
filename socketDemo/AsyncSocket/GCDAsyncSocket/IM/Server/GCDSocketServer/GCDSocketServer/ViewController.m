@@ -86,6 +86,13 @@
 - (IBAction)btnSendClick:(id)sender {
     [self showLogMsg:[NSString stringWithFormat:@"me: %@",_msgTF.text]];
     
+    if (self.clientArr != nil && self.clientArr.count>0) {
+        NSMutableDictionary* dicClient = self.clientArr[0];
+        if (!self.clientSocket) {
+            self.clientSocket=dicClient[@"socket"];
+        }
+    }
+    
     NSMutableDictionary* dicUserData = [NSMutableDictionary dictionary];
     [dicUserData setValue:@"msg" forKey:@"msgType"];
     [dicUserData setValue:self.clientSocket.localHost forKey:@"host"];
@@ -107,7 +114,6 @@
 - (void)socket:(GCDAsyncSocket *)sock didAcceptNewSocket:(GCDAsyncSocket *)newSocket{
     [self showLogMsg:@"收到客户端连接...."];
     [self showLogMsg:[NSString stringWithFormat:@"客户端地址：%@,客户端端口：%d",newSocket.connectedHost,newSocket.connectedPort]];
-    self.clientSocket=newSocket;
     
     //收到连接，保存连接到连接池
     NSMutableDictionary* dicClient = [NSMutableDictionary dictionary];
