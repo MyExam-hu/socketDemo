@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A201w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,100 +19,100 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="172.100.108.52" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4UP-hL-zET">
-                                <rect key="frame" x="15" y="50" width="185" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10.236.54.171" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4UP-hL-zET">
+                                <rect key="frame" x="15" y="50" width="240" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaX-RL-wsH">
-                                <rect key="frame" x="15" y="90" width="290" height="30"/>
-                                <color key="backgroundColor" red="0.99607843139999996" green="0.60784313729999995" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="15" y="90" width="345" height="30"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.60784313729999995" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="zp9-VT-0do"/>
                                 </constraints>
                                 <state key="normal" title="连接">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="connectToServer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A9p-IF-2w5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOJ-CQ-Xax">
-                                <rect key="frame" x="15" y="130" width="290" height="30"/>
-                                <color key="backgroundColor" red="0.99607843139999996" green="0.60784313729999995" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="15" y="130" width="345" height="30"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.60784313729999995" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Cld-Js-phg"/>
                                 </constraints>
                                 <state key="normal" title="断开">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="cutOffConnect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Od-6P-CBJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tj-Ua-xjX">
-                                <rect key="frame" x="237" y="208" width="59" height="30"/>
-                                <color key="backgroundColor" red="0.99607843139999996" green="0.60784313729999995" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="292" y="208" width="59" height="30"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.60784313729999995" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="59" id="2Bq-lv-Ulp"/>
                                     <constraint firstAttribute="height" constant="30" id="XB6-fg-czE"/>
                                 </constraints>
                                 <state key="normal" title="发送">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="sendDataToServer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zF4-PQ-fGj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDW-JO-UKe">
-                                <rect key="frame" x="191" y="168" width="59" height="30"/>
-                                <color key="backgroundColor" red="0.99607843139999996" green="0.60784313729999995" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="218" y="168" width="59" height="30"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.60784313729999995" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="59" id="Fb3-E6-YZA"/>
                                     <constraint firstAttribute="height" constant="30" id="OUS-3b-sHj"/>
                                 </constraints>
                                 <state key="normal" title="清除">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="clearLog:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kxa-o6-rRP"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="22u-BW-IJ5">
-                                <rect key="frame" x="15" y="253" width="290" height="295"/>
-                                <color key="backgroundColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="15" y="253" width="345" height="394"/>
+                                <color key="backgroundColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="33333" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CFL-RJ-Lkd">
-                                <rect key="frame" x="218" y="50" width="86" height="30"/>
+                                <rect key="frame" x="273" y="50" width="86" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入聊天信息" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OdE-6b-B9N">
-                                <rect key="frame" x="15" y="208" width="207" height="30"/>
+                                <rect key="frame" x="15" y="208" width="262" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOu-kY-Qaf">
-                                <rect key="frame" x="70" y="168" width="60" height="30"/>
-                                <color key="backgroundColor" red="0.99607843139999996" green="0.60784313729999995" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="97.5" y="168" width="60" height="30"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.60784313729999995" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7oL-cD-c9L"/>
                                     <constraint firstAttribute="width" constant="60" id="m4a-20-0fF"/>
                                 </constraints>
                                 <state key="normal" title="心跳">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="sendBetaDataToServer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cg5-Pe-5ov"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="4UP-hL-zET" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="4tG-eP-WuV"/>
@@ -158,4 +162,9 @@
             <point key="canvasLocation" x="161" y="406"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>
