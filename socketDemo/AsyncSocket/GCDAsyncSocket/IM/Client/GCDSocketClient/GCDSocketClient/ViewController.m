@@ -100,6 +100,7 @@
 }
 
 //注意：要想长连接,必须还要在DidReceiveData的delegate中再写一次[_udpSocket receiveOnce:&error]
+//接受数据
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag{
     [self.socket readDataWithTimeout:-1 tag:0];
     NSString* strMsg = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
